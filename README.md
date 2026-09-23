@@ -1,6 +1,6 @@
 # Jisfir Cepriano, Portfolio
 
-Static one page portfolio. No build step, no dependencies.
+Static one page portfolio, branded from the client resume (orange #F57602, charcoal #302F2E, Poppins). No build step, no dependencies.
 
 ## Structure
 
