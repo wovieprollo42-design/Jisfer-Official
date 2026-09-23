@@ -203,15 +203,20 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 @media(min-width:900px){.about-grid{grid-template-columns:.82fr 1.18fr;align-items:start}}
 .about h2{font-size:clamp(1.95rem,4vw,2.95rem)}
 .about h2 em{font-style:italic;color:var(--orange);font-weight:700}
-.polaroid{
-  margin:40px 0 0;max-width:262px;padding:11px 11px 0;border-radius:4px;
-  background:#fff;transform:rotate(-2.2deg);border-bottom:9px solid var(--orange);
-  box-shadow:0 26px 52px -26px rgba(0,0,0,.85);transition:transform .5s var(--ease);
+.resume-card{
+  margin:38px 0 0;max-width:460px;background:#fff;border-radius:6px;
+  border:3px solid var(--orange);overflow:hidden;
+  box-shadow:0 26px 52px -26px rgba(0,0,0,.85);
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
 }
-.polaroid:hover{transform:rotate(-.5deg) translateY(-4px)}
-.polaroid img{width:100%;border-radius:2px}
-.polaroid figcaption{font-family:'Caveat',cursive;font-size:19px;color:#2b2a29;text-align:center;padding:9px 6px 13px;line-height:1.25}
-@media(max-width:899px){.polaroid{display:none}}
+.resume-card:hover{transform:translateY(-5px);box-shadow:0 34px 64px -28px rgba(0,0,0,.9)}
+.resume-card img{width:100%;height:auto;display:block}
+.resume-card figcaption{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:14px 16px;background:var(--ink);border-top:3px solid var(--orange);
+}
+.resume-card figcaption span{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted-dark)}
+@media(max-width:899px){.resume-card{max-width:420px;margin:32px auto 0}}
 .about-facts{display:grid;gap:13px;margin-top:32px}
 .fact{display:flex;gap:14px;align-items:flex-start;padding:17px 19px;border-left:4px solid var(--orange);background:var(--ink-2);border-radius:0 8px 8px 0}
 .fact svg{flex:none;margin-top:3px;color:var(--orange)}
@@ -380,8 +385,8 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
           <a class="btn btn-primary" href="#contact">Start a Project
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn-ghost" href="/resume.pdf" target="_blank" rel="noopener">Download Resume
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          <a class="btn btn-ghost" href="/resume.pdf" target="_blank" rel="noopener">View Resume
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
           </a>
         </div>
         <div class="stats">
@@ -427,28 +432,33 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
       <p class="eyebrow">About</p>
       <h2>Systems that keep <em>running</em> after I log off.</h2>
 
-      <figure class="polaroid">
-        <img src="/images/jisfir.jpg" alt="Jisfir Cepriano at his desk" loading="lazy" decoding="async" width="380" height="480" />
-        <figcaption>Butuan City, 6am. Coffee, then workflows.</figcaption>
+      <figure class="resume-card">
+        <a href="/resume.pdf" target="_blank" rel="noopener" aria-label="Open the full resume of Jisfir Cepriano as a PDF">
+          <img src="/images/resume-preview.jpg" alt="Resume of Jisfir Cepriano, one page, listing five roles and twelve core skills" loading="lazy" decoding="async" width="860" height="1216" />
+        </a>
+        <figcaption>
+          <span>Resume, one page</span>
+          <a class="btn btn-primary btn-sm" href="/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        </figcaption>
       </figure>
     </div>
     <div class="rv">
-      <p class="lede">I am a Virtual Assistant and GoHighLevel Specialist based in Butuan City, Philippines, working with digital businesses across the US, UK and beyond since 2023.</p>
-      <p class="lede">My work sits where operations meet automation: building funnels and landing pages that convert, wiring workflows and trigger logic that remove manual steps, keeping CRM pipelines clean, and handling the executive support that lets founders stay on the work only they can do.</p>
-      <p class="lede">Across five client teams I have set up sub-accounts and white-label snapshots, migrated data, launched email and SMS campaigns, designed creative in Canva and Figma, and integrated AI tools into everyday operations.</p>
+      <p class="lede">I am a Virtual Assistant and GoHighLevel Specialist based in Butuan City, Philippines. I have worked with digital businesses since September 2023.</p>
+      <p class="lede">Most of my work happens inside GoHighLevel. I build funnels and landing pages, set up workflows with trigger and condition logic, keep CRM records and pipelines clean, and run the email and SMS campaigns on top of them.</p>
+      <p class="lede">Across five client teams I have configured sub-accounts and white-label snapshots, migrated data, designed in Figma and Canva, edited short-form video, and wired AI tools into daily operations.</p>
 
       <div class="about-facts">
         <div class="fact">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a7 7 0 1 1 14 0c0 5.4-7 10-7 10Z"/><circle cx="12" cy="11" r="2.6"/></svg>
-          <div><b>Butuan City, Philippines</b><span>Remote ready, comfortable across US, UK and AU time zones.</span></div>
+          <div><b>Butuan City, Philippines 8600</b><span>Remote only. Reachable by email or Whatsapp.</span></div>
         </div>
         <div class="fact">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-          <div><b>Full-time and part-time engagements</b><span>Currently supporting JAC Dreamscapes on a part-time basis.</span></div>
+          <div><b>Full-time and part-time</b><span>Currently with JAC Dreamscapes, part-time, since February 2026.</span></div>
         </div>
         <div class="fact">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2 19 19M19 5l-2.8 2.8M7.8 16.2 5 19"/></svg>
-          <div><b>Automation first</b><span>If a task repeats, it gets a workflow instead of a reminder.</span></div>
+          <div><b>Automation first</b><span>If a task repeats, I build a workflow for it instead of a reminder.</span></div>
         </div>
       </div>
     </div>
@@ -460,38 +470,38 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">What I do</p>
-      <h2 style="font-size:clamp(1.95rem,4vw,2.95rem);max-width:17ch">Six ways I take weight off your desk.</h2>
+      <h2 style="font-size:clamp(1.95rem,4vw,2.95rem);max-width:17ch">What I build and run.</h2>
     </div>
     <div class="cards">
       <article class="card rv">
         <div class="card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9L3 4Z"/></svg></div>
         <h3>GHL Funnels and Landing Pages</h3>
-        <p>High-converting funnels and landing pages built from scratch inside GoHighLevel, designed in Figma or Canva and shipped ready to capture leads.</p>
+        <p>Funnels and landing pages built from scratch inside GoHighLevel, designed first in Figma or Canva.</p>
       </article>
       <article class="card rv">
         <div class="card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 6h8M5.5 8.5v4a2 2 0 0 0 2 2h3M18.5 8.5v4a2 2 0 0 1-2 2h-3"/></svg></div>
         <h3>Workflow and Automation Builds</h3>
-        <p>Custom workflows, trigger and condition logic, and AI tool integrations that remove the manual steps between a new lead and a booked call.</p>
+        <p>Custom workflows, trigger and condition logic, and AI tool integrations that cut the manual steps between a new lead and a booked call.</p>
       </article>
       <article class="card rv">
         <div class="card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h10M4 19h6"/><circle cx="19" cy="16" r="3"/></svg></div>
         <h3>CRM Pipeline and Data Management</h3>
-        <p>Clean GoHighLevel records, structured data migration, and lead tracking you can actually report on, so the pipeline reflects reality.</p>
+        <p>GoHighLevel record cleanup, data migration between systems, and pipeline stages set up for lead tracking.</p>
       </article>
       <article class="card rv">
         <div class="card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
         <h3>Email and SMS Campaigns</h3>
-        <p>Campaign builds, reusable email templates, nurture sequences and lead magnets that keep your list warm without daily babysitting.</p>
+        <p>Campaign builds, reusable email templates, and the free guides and lead magnets that feed them.</p>
       </article>
       <article class="card rv">
         <div class="card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div>
         <h3>Sub-Account and White-Label Setup</h3>
-        <p>New GoHighLevel sub-accounts configured end to end, plus snapshots and white-label setup so your agency can roll out clients repeatably.</p>
+        <p>New GoHighLevel sub-accounts configured end to end, plus snapshots and white-label setup for agencies.</p>
       </article>
       <article class="card rv">
         <div class="card-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M21 3 12 12"/><path d="M15 3h6v6"/></svg></div>
         <h3>Creative and Executive Support</h3>
-        <p>Graphics, carousels and short-form video, social media management, B2B invoicing, onboarding and the admin work that keeps a team moving.</p>
+        <p>Graphics, carousels and short-form video, social media scheduling, B2B invoicing and new team onboarding.</p>
       </article>
     </div>
   </div>
@@ -502,7 +512,7 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">Core skills</p>
-      <h2 style="font-size:clamp(1.7rem,3.3vw,2.4rem);max-width:20ch">The toolkit behind the work.</h2>
+      <h2 style="font-size:clamp(1.7rem,3.3vw,2.4rem);max-width:20ch">The skills I use most.</h2>
       <div class="chips">
         <span class="chip">Workflow &amp; Automation Builder</span>
         <span class="chip">GHL Funnel &amp; Landing Pages</span>
@@ -526,7 +536,7 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">Working Experience</p>
-      <h2 style="font-size:clamp(1.95rem,4vw,2.95rem);max-width:18ch">Five teams, one operating standard.</h2>
+      <h2 style="font-size:clamp(1.95rem,4vw,2.95rem);max-width:18ch">Five teams since 2023.</h2>
     </div>
 
     <div class="timeline">
@@ -647,8 +657,8 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   <div class="wrap">
     <div class="contact-card rv">
       <p class="eyebrow">Contacts</p>
-      <h2>Let's build the system <em>your business deserves.</em></h2>
-      <p class="lede">Tell me what is eating your week. I will map the workflow, build it in GoHighLevel, and hand you something that runs on its own.</p>
+      <h2>Let's talk about <em>what you need built.</em></h2>
+      <p class="lede">Send me what you need automated and I will tell you how I would build it in GoHighLevel.</p>
 
       <div class="contact-rows">
         <a class="crow" href="mailto:jisfircepriano18@gmail.com">
@@ -687,7 +697,6 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 <footer class="footer">
   <div class="wrap">
     <p>&copy; <span id="yr">2026</span> Jisfir Cepriano. Remote, worldwide.</p>
-    <p class="note">P.S. if it repeats, it can be automated.</p>
   </div>
 </footer>
 
