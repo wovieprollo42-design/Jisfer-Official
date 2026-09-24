@@ -149,9 +149,12 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero .byline{
   font-size:clamp(.95rem,1.6vw,1.12rem);font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--on-dark);
-  padding-bottom:22px;margin:0 auto 38px;border-bottom:3px solid var(--orange);
-  width:max-content;max-width:100%;
+  text-transform:uppercase;color:var(--on-dark);margin:0 0 14px;
+}
+.hero .subtitle{
+  font-size:clamp(1rem,1.75vw,1.2rem);font-weight:400;color:var(--muted-dark);
+  line-height:1.55;max-width:36ch;text-wrap:balance;
+  padding-bottom:26px;margin:0 auto 38px;border-bottom:3px solid var(--orange);
 }
 .hero .byline span{color:var(--orange)}
 .hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-bottom:48px}
@@ -182,10 +185,10 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   box-shadow:0 14px 32px -14px rgba(0,0,0,.8);white-space:nowrap;
 }
 .tag img{width:22px;height:22px;padding:3px;border-radius:5px;object-fit:contain;background:#fff;flex:none}
-.tag-1{left:-8px;top:10%;animation:float 7s ease-in-out infinite}
-.tag-2{right:-8px;bottom:12%;animation:float 7s ease-in-out infinite 1.7s}
+.tag-1{left:-7%;top:1%;animation:float 7s ease-in-out infinite}
+.tag-2{right:-7%;bottom:7%;animation:float 7s ease-in-out infinite 1.7s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
-@media(max-width:560px){.tag{font-size:10.5px;padding:8px 12px}.tag-1{left:-2px}.tag-2{right:-2px}}
+@media(max-width:560px){.tag{font-size:10.5px;padding:7px 11px}.tag-1{left:-3%;top:-1%}.tag-2{right:-3%;bottom:5%}}
 
 /* ---------- tools strip ---------- */
 .strip{background:var(--ink-3);padding:26px 0;border-top:3px solid var(--orange)}
@@ -378,6 +381,7 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
       <span class="status"><span class="pulse" aria-hidden="true"></span> Available for remote work</span>
       <h1>Certified GoHighLevel Expert<br /><em>and Automation Builder.</em></h1>
       <p class="byline"><span>Jisfir Cepriano</span></p>
+      <p class="subtitle">You get a GoHighLevel setup that works the day it is handed over.</p>
 
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">Start a Project
