@@ -127,8 +127,7 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   -webkit-mask-image:radial-gradient(ellipse 72% 60% at 50% 34%,#000 30%,transparent 76%);
 }
 .hero .wrap{position:relative;z-index:2}
-.hero-inner{display:grid;gap:clamp(44px,6vw,66px);align-items:center}
-@media(min-width:980px){.hero-inner{grid-template-columns:1.06fr .94fr}}
+.hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
 
 .status{
   display:inline-flex;align-items:center;gap:9px;padding:7px 16px 7px 12px;border-radius:99px;
@@ -142,27 +141,27 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 
 /* name styled like the resume: orange, bold, widely tracked */
 .hero h1{
-  font-size:clamp(1.75rem,7.3vw,3.75rem);font-weight:800;color:var(--orange);
-  letter-spacing:.04em;line-height:1.1;margin-bottom:14px;
+  font-size:clamp(1.85rem,7.9vw,6rem);font-weight:800;color:var(--orange);max-width:100%;
+  letter-spacing:.03em;line-height:1.06;margin-bottom:16px;
   white-space:nowrap;
 }
-@media(min-width:980px){.hero h1{font-size:clamp(2.2rem,4.8vw,3.75rem)}}
 .hero .role{
-  font-size:clamp(1rem,1.9vw,1.32rem);font-weight:400;font-style:italic;color:var(--on-dark);
-  padding-bottom:18px;margin-bottom:22px;border-bottom:3px solid var(--orange);max-width:26ch;
+  font-size:clamp(1rem,1.9vw,1.38rem);font-weight:400;font-style:italic;color:var(--on-dark);
+  padding-bottom:20px;margin:0 auto 26px;border-bottom:3px solid var(--orange);
+  max-width:26ch;width:max-content;max-width:min(26ch,100%);
 }
 .hero blockquote{
-  margin:0 0 30px;font-weight:600;font-style:italic;
-  font-size:clamp(1.02rem,1.9vw,1.24rem);line-height:1.56;color:var(--on-dark);max-width:42ch;
+  margin:0 auto 34px;font-weight:600;font-style:italic;
+  font-size:clamp(1.02rem,1.9vw,1.3rem);line-height:1.56;color:var(--on-dark);max-width:46ch;
 }
-.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:42px}
+.hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:13px;margin-bottom:48px}
 
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:2px solid rgba(242,239,237,.14);padding-top:26px;max-width:520px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:2px solid rgba(242,239,237,.14);padding-top:28px;max-width:660px;width:100%;margin:0 auto}
 .stat .n{font-weight:800;font-size:clamp(1.7rem,3.3vw,2.3rem);color:var(--orange);line-height:1;letter-spacing:-.02em}
 .stat .l{font-size:12px;color:var(--muted-dark);margin-top:8px;line-height:1.45}
 
 /* circular portrait with orange ring, straight from the resume */
-.portrait{position:relative;justify-self:center;width:100%;max-width:400px}
+.portrait{position:relative;width:100%;max-width:360px;margin:0 auto}
 .portrait-ring{
   position:relative;width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;
   border:9px solid var(--orange);background:var(--paper);
@@ -199,9 +198,10 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 .strip-row img:hover{transform:translateY(-4px);box-shadow:0 12px 26px -12px rgba(0,0,0,.7)}
 
 /* ---------- about ---------- */
+.about{overflow:hidden}
 .about-top{display:grid;gap:clamp(32px,5vw,58px)}
-@media(min-width:900px){.about-top{grid-template-columns:.9fr 1.1fr;align-items:start}}
-.about h2{font-size:clamp(1.95rem,4vw,2.95rem)}
+@media(min-width:900px){.about-top{grid-template-columns:.8fr 1.2fr;align-items:center}}
+.about h2{font-size:clamp(1.95rem,4vw,2.95rem);margin-bottom:22px}
 .about h2 em{font-style:italic;color:var(--orange);font-weight:700}
 .about-facts{display:grid;gap:14px;margin-top:clamp(42px,5vw,62px)}
 @media(min-width:760px){.about-facts{grid-template-columns:repeat(3,1fr)}}
@@ -308,6 +308,18 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 .footer p{margin:0;font-size:13px;color:var(--muted-dark)}
 .note{font-family:'Caveat',cursive;font-size:20px;color:var(--orange);transform:rotate(-1.4deg);display:inline-block}
 
+/* ---------- booking ---------- */
+.booking{margin-top:clamp(44px,5.5vw,72px)}
+.booking h3{font-size:clamp(1.25rem,2.3vw,1.7rem);margin-bottom:8px}
+.booking p{margin-bottom:24px}
+.calendly-inline-widget{
+  border:3px solid var(--orange);border-radius:12px;overflow:hidden;background:#fff;
+  height:700px;width:100%;min-width:0;
+}
+@media(max-width:820px){.calendly-inline-widget{height:1020px}}
+.booking noscript p{margin:0}
+.booking noscript a{color:var(--orange);text-decoration:underline}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -363,33 +375,24 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
 
   <div class="wrap">
     <div class="hero-inner">
-      <div>
-        <span class="status"><span class="pulse" aria-hidden="true"></span> Available for remote work</span>
-        <h1>Jisfir Cepriano</h1>
-        <p class="role">Virtual Assistant | GoHighLevel</p>
-        <blockquote>"Helping digital businesses drive operational excellence through automation and end-to-end support."</blockquote>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Start a Project
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="/resume.pdf" target="_blank" rel="noopener">View Resume
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-          </a>
-        </div>
-        <div class="stats">
-          <div class="stat"><div class="n" data-count="3" data-suffix="+">0</div><div class="l">Years supporting digital businesses</div></div>
-          <div class="stat"><div class="n" data-count="5" data-suffix="">0</div><div class="l">Client teams supported</div></div>
-          <div class="stat"><div class="n" data-count="4" data-suffix="">0</div><div class="l">GoHighLevel focused roles</div></div>
-        </div>
+      <span class="status"><span class="pulse" aria-hidden="true"></span> Available for remote work</span>
+      <h1>Jisfir Cepriano</h1>
+      <p class="role">Virtual Assistant | GoHighLevel</p>
+      <blockquote>"Helping digital businesses drive operational excellence through automation and end-to-end support."</blockquote>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Start a Project
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="/resume.pdf" target="_blank" rel="noopener">View Resume
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+        </a>
       </div>
 
-      <div class="portrait">
-        <div class="portrait-arc" aria-hidden="true"></div>
-        <div class="portrait-ring">
-          <img src="/images/image_480.png" alt="Portrait of Jisfir Cepriano" width="480" height="480" fetchpriority="high" decoding="async" />
-        </div>
-        <div class="tag tag-1"><img src="/images/logos/highlevel.png" alt="" aria-hidden="true" /> GoHighLevel Expert</div>
-        <div class="tag tag-2"><img src="/images/logos/n8n.jpg" alt="" aria-hidden="true" /> Workflow Automation</div>
+      <div class="stats">
+        <div class="stat"><div class="n" data-count="3" data-suffix="+">0</div><div class="l">Years supporting digital businesses</div></div>
+        <div class="stat"><div class="n" data-count="5" data-suffix="">0</div><div class="l">Client teams supported</div></div>
+        <div class="stat"><div class="n" data-count="4" data-suffix="">0</div><div class="l">GoHighLevel focused roles</div></div>
       </div>
     </div>
   </div>
@@ -417,11 +420,19 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   <div class="wrap">
     <div class="about-top">
       <div class="rv">
-        <p class="eyebrow">About</p>
-        <h2>Systems that keep <em>running</em> after I log off.</h2>
+        <div class="portrait">
+          <div class="portrait-arc" aria-hidden="true"></div>
+          <div class="portrait-ring">
+            <img src="/images/image_480.png" alt="Portrait of Jisfir Cepriano" width="480" height="480" loading="lazy" decoding="async" />
+          </div>
+          <div class="tag tag-1"><img src="/images/logos/highlevel.png" alt="" aria-hidden="true" /> GoHighLevel Expert</div>
+          <div class="tag tag-2"><img src="/images/logos/n8n.jpg" alt="" aria-hidden="true" /> Workflow Automation</div>
+        </div>
       </div>
 
       <div class="rv">
+        <p class="eyebrow">About</p>
+        <h2>Systems that keep <em>running</em> after I log off.</h2>
         <p class="lede">I am a Virtual Assistant and GoHighLevel Specialist based in Butuan City, Philippines. I have worked with digital businesses since September 2023.</p>
         <p class="lede">Most of my work happens inside GoHighLevel. I build funnels and landing pages, set up workflows with trigger and condition logic, keep CRM records and pipelines clean, and run the email and SMS campaigns on top of them.</p>
         <p class="lede">Across five client teams I have configured sub-accounts and white-label snapshots, migrated data, designed in Figma and Canva, edited short-form video, and wired AI tools into daily operations.</p>
@@ -669,6 +680,19 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
         <a href="#contact" data-placeholder aria-label="Instagram profile"><img src="/images/social-ig.jpg" alt="" aria-hidden="true" loading="lazy"></a>
       </div>
     </div>
+
+    <div class="booking rv">
+      <p class="eyebrow">Book a call</p>
+      <h3>Pick a 30 minute slot that suits you.</h3>
+      <p class="lede">No form to fill in first. Choose a time and it lands in both our calendars.</p>
+
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/jisfircepriano18/30min?hide_gdpr_banner=1&amp;primary_color=f57602"></div>
+      <noscript>
+        <p class="lede">The booking calendar needs JavaScript. You can open it directly at
+          <a href="https://calendly.com/jisfircepriano18/30min" target="_blank" rel="noopener">calendly.com/jisfircepriano18/30min</a>.</p>
+      </noscript>
+    </div>
   </div>
 </section>
 
@@ -734,5 +758,6 @@ section{padding:clamp(70px,9.5vw,124px) 0;position:relative}
   }
 })();
 </script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
